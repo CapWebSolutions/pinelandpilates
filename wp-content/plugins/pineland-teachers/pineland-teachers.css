@@ -1,0 +1,64 @@
+/*
+ * Description: Adds the Teachers post type for the theme.
+ * Author: Cap Web Solutions
+ * Version: 1.0.0
+ * Author URI: https://capwebsolutions.com/
+ * 
+ *
+ */
+
+/* 
+/* Teachers
+---------------------------------------------------------------------------------------------------- */
+
+.alignright.tesimonial-image {
+	border: 4px solid #fff;
+	border-radius: 50%;
+	box-shadow: 0 0 6px #888;
+	display: block;
+	height: 122px;
+	margin-left: 20px;
+	overflow: hidden;
+	width: 122px;
+}
+
+.teacher-profile,
+#genesis-content > article > header > article > div > div {
+	margin-bottom: 15px;
+}
+
+article.teacher-entry > div > a > span.teacher-phone,
+article.teacher-entry > div > a > span.teacher-email,
+#genesis-content > article > header > article > div > a:nth-child(3) > span {
+	text-decoration: none;
+    color: green;
+    text-transform: lowercase !important;
+}
+
+article.teacher-entry .teacher-wrap > span > img {
+	border-radius: 50%;
+	display: block;
+	height: auto;
+	margin-left: 5px;
+	width: 100%;
+}
+
+.teacher-wrap > h2.teacher-title {
+margin-bottom: 0;
+}
+#genesis-content > div.teacher-entries > article:nth-child(1) > div > h2, 
+.teacher-wrap .teacher-name {
+	color: #abadb0;
+	display: block;
+	margin-top: 20px;
+}
+
+.teacher-wrap {
+	display: block !important;
+}
+
+.entry-member img.teacher-image {
+	background-color: #f9f9f9;
+	border: 1px solid #ECECED;
+	padding: 5px;
+}
