@@ -101,9 +101,7 @@ Thumbs.db
 
 # track these mu-plugins, plugins, and themes
 # add your own entries here
-!wp-content/themes/pineland-2.3.0/
-!wp-content/themes/pineland-pilates-child/
-!wp-content/themes/genesis-sample-2.6.0/
+!wp-content/themes/pineland-pilates/
 !wp-content/mu-plugins/pinelandpilates-core-functionality/
 !wp-content/mu-plugins/load.php
 !wp-content/plugins/pineland-teachers/

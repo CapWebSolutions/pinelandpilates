@@ -1,0 +1,26 @@
+@media only screen and (min-width: 1024px) {
+    .genesis-nav-menu li a:hover {
+        text-decoration: none;
+    }
+    .genesis-nav-menu>li:hover>a,
+    .genesis-nav-menu>li>a:hover {
+        color: #106ccc;
+    }
+    /* where 1280px is the width of the wrap */
+    .genesis-nav-menu .sub-menu {
+        right: 0;
+        width: 100%;
+        padding-left: calc(50vw - (1280px/2));
+        border-top: none;
+        background-color: #106ccc;
+        font-size: 0.001px;
+    }
+    .genesis-nav-menu .sub-menu a {
+        border: none;
+        color: #fff;
+        background-color: transparent;
+    }
+    .genesis-nav-menu .sub-menu a:hover {
+        background-color: #0c539d;
+    }
+}

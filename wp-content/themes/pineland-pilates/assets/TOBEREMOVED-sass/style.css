@@ -1,0 +1,61 @@
+/*
+Error: File to import not found or unreadable: ../../node_modules/sass-rem/rem.
+        on line 22 of style.scss
+
+17: 	License URI: http://www.opensource.org/licenses/gpl-license.php
+18: 	Text Domain: CapWebWP/Developers
+19: *\/
+20: @import 'bourbon';
+21: @import 'neat';
+22: @import '../../node_modules/sass-rem/rem';
+23: 
+24: @import 'utilities/index';
+25: @import 'base/index';
+26: @import 'layouts/index';
+27: @import 'components/index';
+
+Backtrace:
+style.scss:22
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/import_node.rb:67:in `rescue in import'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/import_node.rb:45:in `import'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/import_node.rb:28:in `imported_file'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/import_node.rb:37:in `css_import?'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:313:in `visit_import'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/stack.rb:79:in `block in with_base'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/stack.rb:115:in `with_frame'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/stack.rb:79:in `with_base'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:160:in `visit'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:52:in `map'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:159:in `visit'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:8:in `visit'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/root_node.rb:36:in `css_tree'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/engine.rb:298:in `render_with_sourcemap'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:209:in `each'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:331:in `block in watch'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/vendor/listen/lib/listen/listener.rb:252:in `call'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
+D:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.24/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: ../../node_modules/sass-rem/rem.\A         on line 22 of style.scss\A \A 17: 	License URI: http://www.opensource.org/licenses/gpl-license.php\A 18: 	Text Domain: CapWebWP/Developers\A 19: */\A 20: @import 'bourbon';\A 21: @import 'neat';\A 22: @import '../../node_modules/sass-rem/rem';\A 23: \A 24: @import 'utilities/index';\A 25: @import 'base/index';\A 26: @import 'layouts/index';\A 27: @import 'components/index';"; }
