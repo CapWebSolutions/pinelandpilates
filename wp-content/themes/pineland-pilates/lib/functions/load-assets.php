@@ -33,21 +33,19 @@ function enqueue_assets() {
 	// );
 	// wp_localize_script( __NAMESPACE__ . '\responsive_menu_settings', 'developersL10n', $localized_script_args );
 
-	/* New test for Minimum Pro style mobile menu
+	/* New style mobile menu
 	Ref: https://sridharkatakam.com/genesis-responsivemenus-in-minimum-pro/ */
-	// wp_enqueue_script(
-	// 	'minimum-responsive-menu',
-	// 	get_stylesheet_directory_uri() . '/assets/js/responsive-menu.js',
-	// 	array( 'jquery' ),
-	// 	CHILD_THEME_VERSION,
-	// 	true
-	// );
+	wp_enqueue_script(
+		'minimum-responsive-menu',
+		get_stylesheet_directory_uri() . '/assets/js/responsive-menu.js',
+		array( 'jquery' ),
+		CHILD_THEME_VERSION,
+		true
+	);
 	wp_localize_script(
 		'minimum-responsive-menu',
 		'genesis_responsive_menu',
 		responsive_menu_settings()
 	);
-
-	/* End of new test */
 
 }
