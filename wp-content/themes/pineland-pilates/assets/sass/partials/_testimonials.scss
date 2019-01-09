@@ -1,0 +1,110 @@
+/* #  Testimonials
+---------------------------------------------------------------------------------------------------- */
+
+.alignright.tesimonial-image {
+    border: 4px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #888;
+    display: block;
+    height: 122px;
+    margin-left: 20px;
+    overflow: hidden;
+    width: 122px;
+}
+
+article.testimonial-entry .testimonial-wrap>span>img {
+    border-radius: 50%;
+    display: block;
+    height: auto;
+    margin-left: 5px;
+    width: 100%;
+}
+
+.testimonial-wrap blockquote {
+    margin: 0;
+    overflow: hidden;
+}
+
+.testimonial-wrap>h2.testimonial-title {
+    margin-bottom: 0;
+}
+
+.testimonial-wrap>.testimonial-descriptor,
+.testimonial-wrap>.testimonial-source {
+    font-weight: normal;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    text-transform: none;
+}
+
+.testimonial-wrap>.testimonial-descriptor {
+    border-bottom: 1px solid #c0c0c0;
+}
+
+.testimonial-wrap .author-name {
+    color: #abadb0;
+    display: block;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.testimonial-wrap .author-name::before {
+    content: " \2014  ";
+}
+
+.testimonial-wrap .company-info {
+    color: #abadb0;
+    display: block;
+    padding-left: 18px;
+}
+
+.testimonials>div:last-child {
+    display: none;
+}
+
+.testimonial-wrap {
+    display: block !important;
+}
+
+.entry-member img.author-image {
+    background-color: #f9f9f9;
+    border: 1px solid #ECECED;
+    padding: 5px;
+}
+
+
+/* # Interior Page Testimonials
+---------------------------------------------------------------------------------------------------- */
+
+.testimonial-quote-internal p {
+    text-align: center;
+    padding: 3px 0 0 0;
+    line-height: 1.5em;
+    font-size: 24px;
+    font-style: italic;
+    margin: 10px 0 0 0;
+}
+
+.testimonial-quote-internal p:before {
+    content: "\201C";
+    color: #0579B2;
+    font-size: 30px;
+}
+
+.testimonial-quote-internal p:after {
+    content: "\201D";
+    color: #0579B2;
+    font-size: 30px;
+}
+
+div.client-contact-info-wrap>span.client-contact-info-internal {
+    margin: 0 0 25px 0;
+    float: right;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 18px;
+}
+
+div.client-contact-info-wrap>span.client-contact-info-internal:before {
+    content: "-";
+}

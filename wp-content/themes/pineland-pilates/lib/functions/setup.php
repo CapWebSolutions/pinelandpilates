@@ -19,14 +19,20 @@ add_action( 'genesis_setup', __NAMESPACE__ . '\setup_child_theme', 15 );
  * @return void
  */
 function setup_child_theme() {
+
 	load_child_theme_textdomain( CHILD_TEXT_DOMAIN, apply_filters( 'child_theme_textdomain', CHILD_THEME_DIR . '/languages', CHILD_TEXT_DOMAIN ) );
 
 	unregister_genesis_callbacks();
 
+	remove_sidebars();
+
+	remove_layouts();
+
 	adds_theme_supports();
+	
 	adds_new_image_sizes();
 
-	add_woocommerce_support();
+	// add_woocommerce_support();
 }
 
 /**
@@ -95,30 +101,40 @@ function adds_theme_supports() {
 }
 
 /**
- * Defines responsive menu settings.
+ * Removes unneeded sidebar(s).
  *
- * @since 2.3.0
+ * @since 1.0.0
+ *
+ * @return void
  */
-function responsive_menu_settings() {
-
-    $settings = array(
-        'mainMenu'         => __( 'Menu', 'minimum' ),
-        'menuIconClass'    => 'dashicons-before dashicons-menu',
-        'subMenu'          => __( 'Submenu', 'minimum' ),
-        'subMenuIconClass' => 'dashicons-before dashicons-arrow-down-alt2',
-        'menuClasses'      => array(
-            'combine' => array(
-                '.nav-header',
-                '.nav-primary',
-            ),
-            'others'  => array(),
-        ),
-    );
-
-    return $settings;
-
+function remove_sidebars() {
+	$config = array(
+		'header-right',
+		'sidebar-alt',
+	);
+	foreach ( $config as $id ) {
+		unregister_sidebar( $id );
+	}
 }
 
+/**
+ * Removes unneeded layout(s).
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function remove_layouts() {
+	$config = array(
+		'content-sidebar-sidebar',
+		'sidebar-content-sidebar',
+		'sidebar-sidebar-content',
+	);
+
+	foreach ( $config as $id ) {
+		genesis_unregister_layout( $id );
+	}
+}
 
 
 /**
@@ -149,128 +165,109 @@ function adds_new_image_sizes() {
 	}
 }
 
-add_filter( 'genesis_theme_settings_defaults', __NAMESPACE__ . '\set_theme_settings_defaults' );
+add_filter( 'genesis_theme_settings_defaults', __NAMESPACE__ . '\theme_defaults' );
 /**
- * Set theme settings defaults.
+ * Updates theme settings on reset.
  *
- * @since 1.0.0
+ * @since 2.2.3
  *
- * @param array $defaults
- *
- * @return array
+ * @param array $defaults Original theme settings defaults.
+ * @return array Modified defaults.
  */
-function set_theme_settings_defaults( array $defaults ) {
-	$config = get_theme_settings_defaults();
+function theme_defaults( $defaults ) {
 
-	$defaults = wp_parse_args( $config, $defaults );
+	$defaults['blog_cat_num']              = 6;
+	$defaults['content_archive']           = 'full';
+	$defaults['content_archive_limit']     = 0;
+	$defaults['content_archive_thumbnail'] = 0;
+	$defaults['posts_nav']                 = 'numeric';
+	$defaults['site_layout']               = 'content-sidebar';
 
 	return $defaults;
+
 }
 
-add_action( 'after_switch_theme', __NAMESPACE__ . '\update_theme_settings_defaults' );
-/**
- * Sets the theme setting defaults.
- *
- * @since 1.0.0
- *
- * @return void
- */
-function update_theme_settings_defaults() {
-	$config = get_theme_settings_defaults();
-
-	if ( function_exists( 'genesis_update_settings' ) ) {
-		genesis_update_settings( $config );
-	}
-
-	update_option( 'posts_per_page', $config['blog_cat_num'] );
-}
-
-/**
- * Get the theme settings defaults.
- *
- * @since 1.0.0
- *
- * @return array
- */
-function get_theme_settings_defaults() {
-	return array(
-		'blog_cat_num'              => 6,
-		'content_archive'           => 'full',
-		'content_archive_limit'     => 0,
-		'content_archive_thumbnail' => 0,
-		'posts_nav'                 => 'numeric',
-		'site_layout'               => 'content-sidebar',
-	);
-}
-
-add_action( 'after_switch_theme', __NAMESPACE__ . '\genesis_sample_theme_setting_defaults' );
+add_action( 'after_switch_theme', __NAMESPACE__ . '\theme_setting_defaults' );
 /**
  * Updates theme settings on activation.
  *
- * @since 1.0.0
+ * @since 2.2.3
  */
-function genesis_sample_theme_setting_defaults() {
+function theme_setting_defaults() {
 
 	if ( function_exists( 'genesis_update_settings' ) ) {
 
-		genesis_update_settings( array(
-			'blog_cat_num'              => 6,
-			'content_archive'           => 'full',
-			'content_archive_limit'     => 0,
-			'content_archive_thumbnail' => 0,
-			'posts_nav'                 => 'numeric',
-			'site_layout'               => 'content-sidebar',
-		) );
+		genesis_update_settings(
+			array(
+				'blog_cat_num'              => 6,
+				'content_archive'           => 'full',
+				'content_archive_limit'     => 0,
+				'content_archive_thumbnail' => 0,
+				'posts_nav'                 => 'numeric',
+				'site_layout'               => 'content-sidebar',
+			)
+		);
 
 	}
 
 	update_option( 'posts_per_page', 6 );
 
 }
-
+add_filter( 'simple_social_default_styles', __NAMESPACE__ . '\set_social_default_styles' );
 /**
- * Add WooCommerce support per Genesis Sample v2.3.0.
+ * Set Simple Social Icon defaults.
  *
- * @since 1.0.0.
+ * @since 1.0.0
+ *
+ * @param array $defaults Social style defaults.
+ * @return array Modified social style defaults.
  */
-function add_woocommerce_support() {
-	include_once( get_stylesheet_directory() . '/lib/woocommerce/woocommerce-setup.php' );
+function set_social_default_styles( $defaults ) {
 
-	// Add the required WooCommerce styles and Customizer CSS.
-	include_once( get_stylesheet_directory() . '/lib/woocommerce/woocommerce-output.php' );
+	$args = array(
+		'alignment'              => 'alignleft',
+		'background_color'       => '#f5f5f5',
+		'background_color_hover' => '#333333',
+		'border_radius'          => 3,
+		'border_width'           => 0,
+		'icon_color'             => '#333333',
+		'icon_color_hover'       => '#ffffff',
+		'size'                   => 40,
+	);
 
-	// Add the Genesis Connect WooCommerce notice.
-	include_once( get_stylesheet_directory() . '/lib/woocommerce/woocommerce-notice.php' );
+	$args = wp_parse_args( $args, $defaults );
+
+	return $args;
+
 }
 
-
+add_action( 'genesis_theme_settings_metaboxes', __NAMESPACE__ . '\remove_metaboxes' );
 /**
- * Remove Genesis Page Templates
+ * Removes output of unused admin settings metaboxes.
  *
- * @author Bill Erickson
- * @link http://www.billerickson.net/remove-genesis-page-templates
+ * @since 2.6.0
  *
- * @param array $page_templates
- * @return array
+ * @param string $_genesis_admin_settings The admin screen to remove meta boxes from.
  */
-function remove_genesis_page_templates( $page_templates ) {
-	unset( $page_templates['page_archive.php'] );
-	unset( $page_templates['page_blog.php'] );
-	return $page_templates;
-}
-add_filter( 'theme_page_templates',  __NAMESPACE__ . '\remove_genesis_page_templates' );
+function remove_metaboxes( $_genesis_admin_settings ) {
 
-/**
- * Remove Metaboxes
- * This removes unused or unneeded metaboxes from Genesis > Theme Settings.
- * See /genesis/lib/admin/theme-settings for all metaboxes.
- *
- * @author Bill Erickson
- * @link http://www.billerickson.net/code/remove-metaboxes-from-genesis-theme-settings/
- */
+	remove_meta_box( 'genesis-theme-settings-header', $_genesis_admin_settings, 'main' );
+	remove_meta_box( 'genesis-theme-settings-nav', $_genesis_admin_settings, 'main' );
 
-function remove_metaboxes( $_genesis_theme_settings_pagehook ) {
-	remove_meta_box( 'genesis-theme-settings-blogpage', $_genesis_theme_settings_pagehook, 'main' );
 }
 
-add_action( 'genesis_theme_settings_metaboxes',  __NAMESPACE__ . '\remove_metaboxes' );
+// add_filter( 'genesis_customizer_theme_settings_config', __NAMESPACE__ . '\remove_customizer_settings' );
+/**
+ * Removes output of header settings in the Customizer.
+ *
+ * @since 2.6.0
+ *
+ * @param array $config Original Customizer items.
+ * @return array Filtered Customizer items.
+ */
+function remove_customizer_settings( $config ) {
+
+	unset( $config['genesis']['sections']['genesis_header'] );
+	return $config;
+
+}

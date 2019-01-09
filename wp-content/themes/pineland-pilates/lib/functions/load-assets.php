@@ -1,19 +1,14 @@
 <?php
 /**
  * Asset loader handler.
- *
- * @package     CapWeb\Pineland
- * @since       1.0.0
- * @author      CapWebSolutions
- * @link        https://capwebsolutions.com
- * @license     GNU General Public License 2.0+
  */
+
 namespace CapWeb\Pineland;
 
 /**
  * Use This Stylesheet Version
  *
- * Set stylesheet version number so that cache is busted when in debug.
+ * Set stylesheet version number so that c ache is busted when in debug.
  *
  * @link https://capwebsolutions.com
  *
@@ -21,12 +16,10 @@ namespace CapWeb\Pineland;
  * @since 1.0.0
  * @license GNU General Public License 2.0+
  */
-
 function use_this_style_version() {
 	if ( WP_DEBUG ) return time();
 	return CHILD_THEME_VERSION;
-} 
-
+}
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 /**
@@ -38,37 +31,81 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
  */
 function enqueue_assets() {
 
-	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style(
+		CHILD_TEXT_DOMAIN . '-fonts',
+		'//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700',
+		array(),
+		CHILD_THEME_VERSION
+	);
+
 	wp_enqueue_style( 'dashicons' );
 
-	// wp_enqueue_script( CHILD_TEXT_DOMAIN . '-responsive-menu', CHILD_URL . '/assets/js/responsive-menu.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
-	//wp_enqueue_style( CHILD_TEXT_DOMAIN . '-horizontal', CHILD_URL . '/style-menu-horizontal.css', array(), '1.0.0' );
-	// wp_enqueue_style( CHILD_TEXT_DOMAIN . '-megamenu', CHILD_URL . '/style-sk-megamenu.css', array(), '1.0.0' );
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-	// $localized_script_args = array(
-	// 	'mainMenu' => __( 'Menu', CHILD_TEXT_DOMAIN ),
-	// 	'subMenu'  => __( 'Menu', CHILD_TEXT_DOMAIN ),
-	// );
-	// wp_localize_script( __NAMESPACE__ . '\responsive_menu_settings', 'developersL10n', $localized_script_args );
+	wp_enqueue_script(
+		CHILD_TEXT_DOMAIN . '-responsive-menus',
+		CHILD_THEME_DIR_URI . "/assets/js/responsive-menus{$suffix}.js",
+		array( 'jquery' ),
+		CHILD_THEME_VERSION,
+		true
+	);
 
-	/* New style mobile menu
-	Ref: https://sridharkatakam.com/genesis-responsivemenus-in-minimum-pro/ */
-	wp_enqueue_script( 'minimum-responsive-menu', CHILD_THEME_DIR . '/assets/js/responsive-menu.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
-	wp_localize_script( 'minimum-responsive-menu', 'genesis_responsive_menu', responsive_menu_settings() );
+	// Localize your settings to the responsive menus script.
+	wp_localize_script(
+		CHILD_TEXT_DOMAIN . '-responsive-menu',
+		'genesis_responsive_menu',
+		pineland_responsive_menu_settings()
+	);
 
-	$min_style_file = CHILD_THEME_DIR . "/style" . ".min.css";
-	$style_file = CHILD_THEME_DIR . "/style.css";
+	wp_enqueue_script(
+		CHILD_TEXT_DOMAIN,
+		CHILD_THEME_DIR_URI . "/assets/js/pineland-pilates{$suffix}.js",
+		array( 'jquery' ),
+		CHILD_THEME_VERSION,
+		true
+	);
 
-	var_dump($min_style_file);
-	var_dump($style_file);
-	var_dump(\CapWeb\Pineland\use_this_style_version());
-	var_dump(file_exists( $min_style_file ));
+}
 
-	if ( file_exists( $min_style_file ) ) {
-		wp_enqueue_style( CHILD_TEXT_DOMAIN, $min_style_file, array( 'jquery' ), use_this_style_version, 'all' );
 
-	} else {
+/**
+ * Defines responsive menu settings.
+ *
+ * @link: https://github.com/studiopress/responsive-menus
+ *
+ * @since 2.3.0
+ */
+function pineland_responsive_menu_settings() {
+	$settings = array(
+		'mainMenu'         => __( 'PinMenu', 'pineland' ),
+		'menuIconClass'    => 'dashicons-before dashicons-menu',
+		'subMenu'          => __( 'PinSubMenu', 'pineland' ),
+		'subMenuIconClass' => 'dashicons-before dashicons-arrow-down-alt2',
+		'menuClasses'      => array(
+			'combine' => array(
+				'.nav-primary',
+				'.menu-primary',
+				'#menu-primary-menu'
+			),
+			'others'  => array(
+				'.mega-menu',
+			),
+		),
+	);
+	return $settings;
+}
 
-		wp_enqueue_style( CHILD_TEXT_DOMAIN, $style_file, array( 'jquery' ), use_this_style_version, 'all' );
-	}
+
+add_filter( 'stylesheet_uri', __NAMESPACE__ . '\stylesheet_uri', 10, 2 );
+/**
+ * Loads minified version of style.css depending on value of wp_debug.
+ *
+ * @param string $stylesheet_uri     Original stylesheet URI.
+ * @param string $stylesheet_dir_uri Stylesheet directory.
+ * @return string (Maybe modified) stylesheet URI.
+ */
+function stylesheet_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
+	if ( WP_DEBUG ) return trailingslashit( $stylesheet_dir_uri ) . 'style.css';
+	return trailingslashit( $stylesheet_dir_uri ) . 'style.min.css';
+
 }

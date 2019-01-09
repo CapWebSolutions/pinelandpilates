@@ -26,6 +26,7 @@
 --------------------------------------------- */
 
 .after-entry {
+	background-color: #fff;
 	margin-bottom: 40px;
 	padding: 20px 30px;
 	box-shadow: 0 0 $box-shadow-blur-radius rgba(0, 0, 0, $box-shadow-opacity);
@@ -48,10 +49,12 @@
 }
 
 .archive-description {
+    background-color: #fff;
 	margin-bottom: 40px;
 
 	@media only screen and (min-width: $standard-screen-width) {
 		margin-bottom: 60px;
+		padding: 40px 60px;
 	}
 
 	p:last-child {
@@ -66,6 +69,7 @@
 }
 
 .author-box {
+    background-color: #fff;
 	margin-bottom: 40px;
 
 	@media only screen and (min-width: $standard-screen-width) {
@@ -112,13 +116,17 @@
 .archive-title,
 .author-box-title {
 	margin-bottom: 10px;
-	font-size: $archive-author-box__entry-title--font-size;
+	// font-size: $archive-author-box__entry-title--font-size;
+	font-size: 20px;
+    font-size: 2rem;
 	font-weight: $font-weight--semibold;
 }
 
 .entry-title {
-	margin-bottom: 10px;
-	font-size: $entry-title--font-size;
+	margin-bottom: 20px;
+	// font-size: $entry-title--font-size;
+    font-size: 36px;
+    font-size: 3.6rem;
 
 	a {
 		color: $entry-title__link--font-color;
@@ -127,12 +135,14 @@
 
 	a:focus,
 	a:hover {
-		color: $entry-title__link--font-color-hover;
+		// color: $entry-title__link--font-color-hover;
+		color: #c3251d;
 	}
 }
 
 .sidebar .widget-title a {
-	color: $sidebar__widget-title--font-color;
+	// color: $sidebar__widget-title--font-color;
+	color: #333;
 	text-decoration: none;
 }
 
@@ -196,7 +206,9 @@ img.alignright,
 .gallery-caption,
 .wp-caption-text {
 	margin: 0;
-	font-size: $entry-content__caption--font-size;
+	// font-size: $entry-content__caption--font-size;
+	font-size: 14px;
+    font-size: 1.4rem;
 	font-weight: $font-weight--semibold;
 	text-align: center;
 }

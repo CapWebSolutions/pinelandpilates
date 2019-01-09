@@ -1,137 +1,6 @@
 /* Site Navigation
 --------------------------------------------------- */
 
-.genesis-nav-menu {
-	clear: both;
-	width: 100%;
-	line-height: 1;
-
-	.menu-item {
-		display: block;
-		float: none;
-		position: relative;
-
-		@media only screen and (min-width: $standard-screen-width) {
-			display: inline-block;
-		}
-	}
-
-	.menu-item:focus,
-	.menu-item:hover {
-		position: relative;
-	}
-
-	@media only screen and (min-width: $standard-screen-width) {
-
-		.menu-item:focus .sub-menu:focus,
-		.menu-item:hover .sub-menu:hover {
-			z-index: 100;
-		}
-	}
-
-	.menu-item:focus > .sub-menu,
-	.menu-item:hover > .sub-menu {
-		display: block;
-		left: auto;
-		opacity: 1;
-	}
-
-	> .menu-bold > a {
-
-		@media only screen and (min-width: $standard-screen-width) {
-			font-weight: $font-weight--bold;
-		}
-	}
-
-	> .menu-highlight > a {
-
-		@media only screen and (min-width: $standard-screen-width) {
-			margin-left: 15px;
-			padding-right: 20px;
-			padding-left: 20px;
-			border-radius: 3px;
-			color: $menu-highlight__link--font-color;
-			background-color: $menu-highlight__link--background-color;
-			font-weight: $font-weight--semibold;
-		}
-	}
-
-	> .menu-highlight > a:focus,
-	> .menu-highlight > a:hover {
-
-		@media only screen and (min-width: $standard-screen-width) {
-			background-color: $menu-highlight__link--background-color-hover;
-		}
-	}
-
-	a {
-		display: block;
-		padding-top: 12px;
-		padding-bottom: 12px;
-		outline-offset: -1px;
-		color: $genesis-nav-menu--font-color;
-		font-size: $genesis-nav-menu--font-size;
-		font-weight: $font-weight--regular;
-		text-decoration: none;
-	}
-
-	a:focus,
-	a:hover,
-	.current-menu-item > a,
-	.sub-menu .current-menu-item > a:focus,
-	.sub-menu .current-menu-item > a:hover {
-		color: $genesis-nav-menu--font-color-hover;
-		text-decoration: none;
-	}
-
-	.sub-menu {
-		display: block;
-		clear: both;
-		position: static;
-		z-index: 99;
-		width: 100%;
-		margin: 0;
-		padding-left: 15px;
-		opacity: 1;
-
-		@media only screen and (min-width: $standard-screen-width) {
-			position: absolute;
-			width: 180px;
-			padding-left: 0;
-			border-top: $border-width $border-style $border-color;
-			opacity: 0;
-			transition: opacity 0.4s ease-in-out;
-		}
-
-		a {
-			position: relative;
-			width: 100%;
-			background-color: $genesis-nav-menu__sub-menu__link--background-color;
-			font-size: $genesis-nav-menu__sub-menu__link--font-size;
-			word-wrap: break-word;
-
-			@media only screen and (min-width: $standard-screen-width) {
-				width: 180px;
-				padding-top: 15px;
-				padding-bottom: 15px;
-				border: $border-width $border-style $border-color;
-				border-top: 0;
-			}
-		}
-
-		.sub-menu {
-
-			@media only screen and (min-width: $standard-screen-width) {
-				margin: -46px 0 0 179px;
-			}
-		}
-	}
-
-	.sub-menu:focus-within {
-		opacity: 1;
-	}
-}
-
 /* Avoid flash of desktop menu on mobile devices.
 ----------------------------------------------*/
 .js nav {
@@ -143,189 +12,181 @@
 	}
 }
 
-/* Responsive Menu
+/* Accessible Menu
 --------------------------------------------- */
 
-.menu {
-
-	.menu-item:focus {
-		position: static;
-	}
-
-	.menu-item > a:focus + ul.sub-menu,
-	.menu-item.sfHover > ul.sub-menu {
-		left: auto;
-		opacity: 1;
-	}
+.menu .menu-item:focus {
+	position: static;
 }
 
-.genesis-responsive-menu {
-	display: none;
-	position: relative;
-	padding-bottom: 15px;
-
-	@media only screen and (min-width: $standard-screen-width) {
-		display: block;
-	}
-
-	.genesis-nav-menu {
-
-		.menu-item:hover > .sub-menu,
-		.menu-item:focus > .sub-menu {
-			display: none;
-		}
-
-		.sub-menu {
-			display: none;
-			clear: both;
-			position: static;
-			z-index: 99;
-			left: -9999px;
-			width: 100%;
-			margin: 0;
-			padding-left: 15px;
-			opacity: 1;
-
-			@media only screen and (min-width: $standard-screen-width) {
-				position: absolute;
-				width: 180px;
-				padding-left: 0;
-				border-top: $border-width $border-style $border-color;
-				opacity: 0;
-				transition: opacity 0.4s ease-in-out;
-			}
-		}
-	}
+.menu .menu-item > a:focus + ul.sub-menu,
+.menu .menu-item.sfHover > ul.sub-menu {
+	left: auto;
+	opacity: 1;
 }
 
-.menu-toggle {
-	display: block;
-	visibility: visible;
-	float: right;
-	overflow: hidden;
-	position: relative;
-	z-index: 1000;
-	margin: 0 auto;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	padding: 15px 0;
-	border-width: 0;
-	color: $menu-toggle--font-color;
-	background-color: transparent;
-	line-height: $line-height--big;
-	text-align: center;
-
-	@media only screen and (min-width: $standard-screen-width) {
-		display: none;
-	}
-
-	&:focus,
-	&:hover {
-		border-width: 0;
-		color: $menu-toggle--font-color-hover;
-		background-color: transparent;
-	}
-
-	&.activated:before {
-		content: "\f335";
-	}
-
-	.site-header &:before {
-		float: left;
-		position: relative;
-		top: 1px;
-		margin-right: 5px;
-		text-rendering: auto;
-	}
-}
-
+.menu-toggle,
 .sub-menu-toggle {
-	display: block;
-	visibility: visible;
-	float: right;
-	overflow: hidden;
-	position: absolute;
-	z-index: 100;
-	top: 0;
-	right: 0;
-	margin: 0 auto;
-	padding: 9px 10px;
-	border-width: 0;
-	color: $sub-menu-toggle--font-color;
-	background-color: transparent;
-	text-align: center;
+	display: none;
+	visibility: hidden;
+}
 
-	@media only screen and (min-width: $standard-screen-width) {
-		display: none;
+@media only screen and ( max-width: $standard-screen-width ) {
+	.genesis-responsive-menu .wrap {
+		padding: 0;
 	}
 
-	&:focus,
-	&:hover {
+	.genesis-nav-menu {
+        text-align: center;
+	}
+	
+	.genesis-responsive-menu {
+		display: none;
+		position: relative;
+	}
+
+	.genesis-skip-link .skip-link-hidden {
+		display: none;
+		visibility: hidden;
+	}
+
+	.menu-toggle,
+	.sub-menu-toggle {
 		border-width: 0;
-		color: $sub-menu-toggle--font-color-hover;
+		background-color: #fff;
+		color: #333;
+		display: block;
+		margin: 0 auto;
+		overflow: hidden;
+		text-align: center;
+		visibility: visible;
+	}
+
+	.menu-toggle:focus,
+	.menu-toggle:hover,
+	.sub-menu-toggle:focus,
+	.sub-menu-toggle:hover {
+		border-top: 1px solid #eee;
+		background: transparent;
+		color: #c3251d;
+		border-width: 0;
+	}
+
+	.menu-toggle {
+		line-height: 20px;
+		position: relative;
+		z-index: 1000;
+		width: 100%;
+	}
+
+	.menu-toggle::before {
+		font-size: 1.5em;
+		margin-right: 10px;
+		text-rendering: auto;
+		vertical-align: middle;
+	}
+
+	.sub-menu-toggle {
+		float: right;
+		padding: 13px 10px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 100;
+		background-color: transparent;
+
+	}
+	.sub-menu .sub-menu-toggle {
+        padding: 12px 10px;
+    }
+
+	.sub-menu-toggle::before {
+		display: inline-block;
+		text-rendering: auto;
+		-webkit-transform: rotate( 0 );
+		-ms-transform:     rotate( 0 );
+		transform:         rotate( 0 );
+		-webkit-transition: transform .25s ease-in-out;
+		-ms-transition:     transform .25s ease-in-out;
+		transition:         transform .25s ease-in-out;
+	}
+
+	.sub-menu-toggle.activated::before {
+		-webkit-transform: rotate( 180deg );
+		-ms-transform:     rotate( 180deg );
+		transform:         rotate( 180deg );
+	}
+
+	.genesis-responsive-menu .genesis-nav-menu .menu-item {
+		display: block;
+		float: none;
+		position: relative;
+		text-align: left;
+	}
+
+	.genesis-responsive-menu .genesis-nav-menu .menu-item:focus,
+	.genesis-responsive-menu .genesis-nav-menu .menu-item:hover {
+		position: relative;
+	}
+
+	.genesis-responsive-menu .genesis-nav-menu a:focus,
+	.genesis-responsive-menu .genesis-nav-menu a:hover {
+		color: #d43c67;
+		outline: thin solid #ccc;
+		outline-offset: -1px;
+	}
+
+	.genesis-responsive-menu .genesis-nav-menu .menu-item a {
+		border: none;
+		margin-bottom: 1px;
+		padding: 15px 20px;		
+		width: 100%;
 		background-color: transparent;
 	}
 
-	&:before {
-		display: inline-block;
-		transition: transform 0.25s ease-in-out;
-		-webkit-transform: rotate(0);
-		-ms-transform: rotate(0);
-		transform: rotate(0);
-		text-rendering: auto;
+	.genesis-responsive-menu .genesis-nav-menu .sub-menu {
+		border: none;
 	}
 
-	.sub-menu & {
-		padding: 12px 10px;
+	.genesis-responsive-menu .genesis-nav-menu .sub-menu,
+    .genesis-responsive-menu .genesis-nav-menu .sub-menu a {
+		width: 100%;
 	}
 
-	&.activated:before {
-		-webkit-transform: rotate(180deg);
-		-ms-transform: rotate(180deg);
-		transform: rotate(180deg);
-	}
-}
-
-/* Header Menu
---------------------------------------------- */
-
-.nav-primary {
-	clear: left;
-	width: 100%;
-
-	@media only screen and (min-width: $standard-screen-width) {
-		float: right;
-		clear: none;
-		width: auto;
-		padding-top: 15px;
+	.genesis-responsive-menu .genesis-nav-menu .menu-item > a:focus ul.sub-menu,
+	.genesis-responsive-menu .genesis-nav-menu .menu-item > a:focus ul.sub-menu .sub-menu {
+		left: 0;
+		margin-left: 0;
 	}
 
-	.genesis-nav-menu a {
-
-		@media only screen and (min-width: $standard-screen-width) {
-			padding-right: 15px;
-			padding-left: 15px;
-		}
-	}
-}
-
-/* Footer Menu
---------------------------------------------- */
-
-.nav-secondary {
-	margin-top: 10px;
-
-	.genesis-nav-menu {
-		line-height: $line-height--medium;
+	.genesis-responsive-menu .genesis-nav-menu > .menu-item-has-children > a::after {
+		content: none;
 	}
 
-	.menu-item {
-		display: inline-block;
+	.genesis-responsive-menu .genesis-nav-menu .sub-menu {
+		clear: both;
+		display: none;
+		margin: 0;
+		opacity: 1;
+		padding-left: 15px;
+		position: static;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.05);
 	}
 
-	a {
-		margin-right: 10px;
-		margin-left: 10px;
-		padding: 0;
+	.genesis-responsive-menu .genesis-nav-menu .sub-menu .sub-menu {
+		margin: 0;
+	}
+	.genesis-responsive-menu .site-header .genesis-nav-menu .menu-item a {
+		padding: 10px 0;
+	}
+	
+	.genesis-nav-menu li,
+	.site-header ul.genesis-nav-menu {
+		float: none;
+	}
+	.genesis-nav-menu .genesis-nav-menu li,
+	.site-header ul .genesis-nav-menu {
+		float: none;
 	}
 }

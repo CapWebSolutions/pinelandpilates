@@ -16,4 +16,3 @@ require_once 'lib/init.php';
 
 // Load in functional logic.
 require_once 'lib/functions/autoload.php';
-

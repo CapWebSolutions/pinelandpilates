@@ -23,6 +23,8 @@ namespace CapWeb\Pineland;
 function load_nonadmin_files() {
 	$filenames = array(
 		'functions/setup.php',
+		'components/customizer/css-handler.php',
+		'components/customizer/helpers.php',
 		'functions/formatting.php',
 		'functions/load-assets.php',
 		'functions/markup.php',
@@ -34,8 +36,6 @@ function load_nonadmin_files() {
 		'structure/post.php',
 		'structure/sidebar.php',
 		'components/customizer/customizer.php',
-		'components/customizer/css-handler.php',
-		'components/customizer/helpers.php',
 		'components/forms.php',
 		'components/search.php',
 	);

@@ -40,7 +40,6 @@ function handleErrors() {
             message: '<%= error %> - See console or enable logging in the plugin.'
         })
         .apply(this, args);
-
     // Prevent the 'watch' task from stopping
     this.emit('end');
 }
@@ -180,7 +179,7 @@ gulp.task('js', () => {
                 noSource: true
             })
         )
-        .pipe(gulp.dest('js'))
+        .pipe(gulp.dest('./assets/js'))
 
     // Inject changes via browserSync.
     .pipe(
@@ -210,7 +209,7 @@ gulp.task('watch', () => {
         proxy: `http://${siteName}`,
         host: siteName,
         // open: 'external',
-        open: 'local', // Needed to LBF install
+        open: 'local', // Needed for LocalByFlywheel install
         port: 8000,
         // https: {
         // 	key: `/Users/${userName}/.valet/Certificates/${siteName}.key`,

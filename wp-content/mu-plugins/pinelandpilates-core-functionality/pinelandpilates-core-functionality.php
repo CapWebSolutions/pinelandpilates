@@ -3,7 +3,7 @@
  * Plugin Name: Pineland Pilates Core Functionality
  * Plugin URI: https://github.com/CapWebSolutions/starter-core-functionality
  * Description: This contains all this site's core functionality so that it is theme independent. 
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Cap Web Solutions
  * Author URI: https://capwebsolutions.com
  *
@@ -23,30 +23,7 @@ define( 'CWS_DIR', dirname( __FILE__ ) );
 // General. This should always be used. 
 include_once( CWS_DIR . '/lib/functions/general.php' );
 
-// Define needed Custom Post Types.
-// include_once( CWS_DIR . '/lib/functions/post-types.php' );
-
-// Define needed Custom Taxonomies.
-// include_once( CWS_DIR . '/lib/functions/taxonomies.php' );
-
-// Define Custom Meta boxes.
-// include_once( CWS_DIR . '/lib/functions/metaboxes.php' );
-
-// Footer Setup.This should always be used. 
-// include_once( CWS_DIR . '/lib/functions/core-footer.php' );
-
-// Woo tweaks. Only if WooCommerce active.
-if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-// or if ( class_exists( 'WooCommerce' ) ) {
-	include_once( CWS_DIR . '/lib/functions/wootweaks.php' );
-}
-
-
-// Gravity Forms tweaks. This should always be used if Gravity Forms active. Which one to use??
+// Gravity Forms tweaks. This should always be used if Gravity Forms active. 
 if ( in_array( 'gravityforms/gravityforms.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-	include_once( CWS_DIR . '/lib/functions/gravitytweaks.php' );
-}
-// or 
-if ( class_exists( 'GFForms' ) ) { 
 	include_once( CWS_DIR . '/lib/functions/gravitytweaks.php' );
 }

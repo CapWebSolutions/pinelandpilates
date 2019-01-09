@@ -1,22 +1,3 @@
-/*
-	Theme Name: Pineland 2.3.0
-	Theme URI: http://www.studiopress.com/
-	Description: This is the custom child theme created for Pineland Pilates running on the Genesis Framework.
-	Author: Cap Web Solutions
-	Author URI: https://capwebsolutions.com/
-
-	Version: 2.3.0
-
-    Template: genesis
-	Template Version: 2.3.0
-
-	License: GPL-2.0+
-	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-	Text Domain: pineland
-*/
-
-
 /* # Table of Contents
 - HTML5 Reset
 	- Baseline Normalize
@@ -999,243 +980,6 @@ th:first-child {
 }
 
 
-/* # Common Classes
----------------------------------------------------------------------------------------------------- */
-
-
-/* ## Avatar
---------------------------------------------- */
-
-.avatar {
-    border-radius: 50%;
-    float: left;
-}
-
-.author-box .avatar,
-.alignleft .avatar {
-    margin-right: 24px;
-}
-
-.alignright .avatar {
-    margin-left: 24px;
-}
-
-.comment .avatar {
-    margin: 0 16px 24px 0;
-}
-
-
-/* ## Genesis
---------------------------------------------- */
-
-.breadcrumb {
-    background-color: #fff;
-    font-size: 16px;
-    font-size: 1.6rem;
-    margin-bottom: 1px;
-    padding: 12px 30px;
-}
-
-.after-entry,
-.archive-description,
-.author-box {
-    background-color: #fff;
-    font-size: 18px;
-    font-size: 1.8rem;
-    margin-bottom: 40px;
-    padding: 60px;
-}
-
-.archive-description p:last-child,
-.author-box p:last-child {
-    margin-bottom: 0;
-}
-
-
-/* ## Search Form
---------------------------------------------- */
-
-.search-form {
-    overflow: hidden;
-}
-
-.entry-content .search-form,
-.site-header .search-form {
-    margin-bottom: 40px;
-    width: 50%;
-}
-
-.site-header .search-form {
-    float: right;
-    margin: 12px auto 0;
-}
-
-.post-password-form input[type="submit"],
-.search-form input[type="submit"] {
-    margin-top: 10px;
-}
-
-.genesis-nav-menu .search input[type="submit"],
-.widget_search input[type="submit"] {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-
-/* ## Titles
---------------------------------------------- */
-
-.archive-description .entry-title,
-.archive-title,
-.author-box-title {
-    font-size: 20px;
-    font-size: 2rem;
-}
-
-.entry-title {
-    font-size: 36px;
-    font-size: 3.6rem;
-}
-
-.entry-title a,
-.sidebar .widget-title a {
-    color: #333;
-    text-decoration: none;
-}
-
-.entry-title a:focus,
-.entry-title a:hover {
-    color: #c3251d;
-}
-
-.widget-title {
-    font-size: 18px;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-}
-
-
-/* ## WordPress
---------------------------------------------- */
-
-a.aligncenter img {
-    display: block;
-    margin: 0 auto;
-}
-
-a.alignnone {
-    display: inline-block;
-}
-
-.alignleft {
-    float: left;
-    text-align: left;
-}
-
-.alignright {
-    float: right;
-    text-align: right;
-}
-
-a.alignleft,
-a.alignnone,
-a.alignright {
-    max-width: 100%;
-}
-
-img.centered,
-.aligncenter {
-    display: block;
-    margin: 0 auto 24px;
-}
-
-img.alignnone,
-.alignnone {
-    margin-bottom: 12px;
-}
-
-a.alignleft,
-img.alignleft,
-.wp-caption.alignleft {
-    margin: 0 24px 24px 0;
-}
-
-a.alignright,
-img.alignright,
-.wp-caption.alignright {
-    margin: 0 0 24px 24px;
-}
-
-.gallery-caption,
-.wp-caption-text {
-    font-size: 14px;
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin: 0;
-    text-align: center;
-}
-
-.entry-content p.wp-caption-text {
-    margin-bottom: 0;
-}
-
-.entry-content .wp-audio-shortcode,
-.entry-content .wp-playlist,
-.entry-content .wp-video {
-    margin: 0 0 28px;
-}
-
-
-/* # Widgets
----------------------------------------------------------------------------------------------------- */
-
-.widget {
-    margin-bottom: 40px;
-    word-wrap: break-word;
-}
-
-.widget p:last-child,
-.widget ul>li:last-of-type,
-.widget-area .widget:last-of-type {
-    margin-bottom: 0;
-}
-
-.widget ul>li {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-}
-
-.widget ul>li:last-of-type {
-    padding-bottom: 0;
-}
-
-.widget ol>li {
-    list-style-position: inside;
-    list-style-type: decimal;
-    padding-left: 20px;
-    text-indent: -20px;
-}
-
-.widget li li {
-    border: 0;
-    margin: 0 0 0 30px;
-    padding: 0;
-}
-
-.widget_calendar table {
-    width: 100%;
-}
-
-.widget_calendar td,
-.widget_calendar th {
-    text-align: center;
-}
-
 
 /* ## Featured Content
 --------------------------------------------- */
@@ -1254,61 +998,6 @@ img.alignright,
     font-size: 2rem;
 }
 
-
-/* # Plugins
----------------------------------------------------------------------------------------------------- */
-
-
-/* ## Genesis eNews Extended
---------------------------------------------- */
-
-.sidebar .enews-widget,
-.sidebar .enews-widget .widget-title {
-    color: #fff;
-}
-
-.sidebar .widget.enews-widget {
-    background-color: #333;
-}
-
-.sidebar .enews-widget input,
-.sidebar .enews-widget input:focus {
-    border: 1px solid #333;
-}
-
-.sidebar .enews-widget input[type="submit"] {
-    background-color: #c3251d;
-    color: #fff;
-}
-
-.sidebar .enews-widget input[type="submit"]:focus,
-.sidebar .enews-widget input[type="submit"]:hover {
-    background-color: #fff;
-    color: #333;
-}
-
-.enews-widget input {
-    font-size: 16px;
-    font-size: 1.6rem;
-    margin-bottom: 16px;
-}
-
-.enews-widget input[type="submit"] {
-    margin: 0;
-    width: 100%;
-}
-
-.enews form+p {
-    margin-top: 24px;
-}
-
-
-/* ## Jetpack
---------------------------------------------- */
-
-#wpstats {
-    display: none;
-}
 
 
 /* # Skip Links
@@ -1330,94 +1019,6 @@ img.alignright,
 :focus {
     color: #333;
     outline: #ccc solid 1px;
-}
-
-
-/* # Site Header
----------------------------------------------------------------------------------------------------- */
-
-.site-header {
-    background-color: #84BFA9;
-}
-
-.site-header>.wrap {
-    padding: 20px 0;
-}
-
-
-/* ## Title Area
---------------------------------------------- */
-
-.title-area {
-    float: left;
-    padding: 10px 0;
-    /* width: 300px; */
-}
-
-.title-area p.site-description {
-    display: none;
-}
-
-div.site-container>header>div>div.title-area>p.site-title>a,
-div.site-container>header>div>div.title-area>h1>a {
-    /* border: 60px solid #84BFA9;
-border-left: 80px solid #84BFA9;
-border-right: 80px solid #84BFA9; */
-    /* border: 1px solid #84BFA9;
-border-left: 1px solid #84BFA9;
-border-right: 1px solid #84BFA9; */
-    margin: 4vh auto;
-}
-
-.header-image .title-area {
-    margin: 0 auto;
-    max-width: 1080px;
-    padding: 0;
-}
-
-.header-full-width .title-area {
-    float: none;
-    width: 100%;
-}
-
-.site-title {
-    font-size: 30px;
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.site-title a,
-.site-title a:focus,
-.site-title a:hover {
-    color: #333;
-    text-decoration: none;
-}
-
-.header-image .site-title>a {
-    background-position: center !important;
-    background-size: contain !important;
-    float: left;
-    min-height: 180px;
-    width: 100%;
-}
-
-.site-description {
-    font-size: 16px;
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
-.site-description,
-.site-title {
-    margin-bottom: 0;
-}
-
-.header-image .site-description,
-.header-image .site-title {
-    display: block;
-    text-indent: -9999px;
 }
 
 
@@ -1486,7 +1087,6 @@ border-right: 1px solid #84BFA9; */
     border-top: 0;
     font-size: 18px;
     font-size: 1.8rem;
-    /* padding: 20px; */
     position: relative;
     width: 200px;
     word-wrap: break-word;
@@ -1518,29 +1118,6 @@ border-right: 1px solid #84BFA9; */
 }
 
 
-/* https://sridharkatakam.com/genesis-responsivemenus-in-minimum-pro/ */
-
-
-/* ## Accessible Menu
---------------------------------------------- */
-
-.menu .menu-item:focus {
-    position: static;
-}
-
-.menu .menu-item>a:focus+ul.sub-menu,
-.menu .menu-item.sfHover>ul.sub-menu {
-    left: auto;
-    opacity: 1;
-}
-
-.menu-toggle,
-.sub-menu-toggle {
-    display: none;
-    visibility: hidden;
-}
-
-
 /* ## Site Header Navigation
 --------------------------------------------- */
 
@@ -1554,7 +1131,6 @@ border-right: 1px solid #84BFA9; */
 
 .nav-primary {
     background-color: #84BFA9;
-    /* border-top: 1px solid #eee; */
 }
 
 
@@ -1807,186 +1383,6 @@ p.entry-meta {
 }
 
 
-/* #  Testimonials
----------------------------------------------------------------------------------------------------- */
-
-.alignright.tesimonial-image {
-    border: 4px solid #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 6px #888;
-    display: block;
-    height: 122px;
-    margin-left: 20px;
-    overflow: hidden;
-    width: 122px;
-}
-
-article.testimonial-entry .testimonial-wrap>span>img {
-    border-radius: 50%;
-    display: block;
-    height: auto;
-    margin-left: 5px;
-    width: 100%;
-}
-
-.testimonial-wrap blockquote {
-    margin: 0;
-    overflow: hidden;
-}
-
-.testimonial-wrap>h2.testimonial-title {
-    margin-bottom: 0;
-}
-
-.testimonial-wrap>.testimonial-descriptor,
-.testimonial-wrap>.testimonial-source {
-    font-weight: normal;
-    margin-top: -10px;
-    margin-bottom: 10px;
-    text-transform: none;
-}
-
-.testimonial-wrap>.testimonial-descriptor {
-    border-bottom: 1px solid #c0c0c0;
-}
-
-.testimonial-wrap .author-name {
-    color: #abadb0;
-    display: block;
-    margin-top: 20px;
-    text-transform: uppercase;
-}
-
-.testimonial-wrap .author-name::before {
-    content: " \2014  ";
-}
-
-.testimonial-wrap .company-info {
-    color: #abadb0;
-    display: block;
-    padding-left: 18px;
-}
-
-.testimonials>div:last-child {
-    display: none;
-}
-
-.testimonial-wrap {
-    display: block !important;
-}
-
-.entry-member img.author-image {
-    background-color: #f9f9f9;
-    border: 1px solid #ECECED;
-    padding: 5px;
-}
-
-
-/* # Interior Page Testimonials
----------------------------------------------------------------------------------------------------- */
-
-.testimonial-quote-internal p {
-    text-align: center;
-    padding: 3px 0 0 0;
-    line-height: 1.5em;
-    font-size: 24px;
-    font-style: italic;
-    margin: 10px 0 0 0;
-}
-
-.testimonial-quote-internal p:before {
-    content: "\201C";
-    color: #0579B2;
-    font-size: 30px;
-}
-
-.testimonial-quote-internal p:after {
-    content: "\201D";
-    color: #0579B2;
-    font-size: 30px;
-}
-
-div.client-contact-info-wrap>span.client-contact-info-internal {
-    margin: 0 0 25px 0;
-    float: right;
-    text-align: center;
-    font-weight: lighter;
-    font-size: 18px;
-}
-
-div.client-contact-info-wrap>span.client-contact-info-internal:before {
-    content: "-";
-}
-
-
-/* Teachers
----------------------------------------------------------------------------------------------------- */
-
-.teacher-entry {
-    background-color: white;
-}
-
-.alignright.teacher-image {
-    border: 4px solid #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 6px #888;
-    display: block;
-    height: 122px;
-    margin-left: 20px;
-    overflow: hidden;
-    width: 122px;
-}
-
-#genesis-content>div.teacher-entries>article:nth-child(1)>div>h2,
-.teacher-wrap .teacher-name {
-    color: black;
-}
-
-#genesis-content>article>header>article>div>div {
-    margin-bottom: 15px;
-}
-
-article.teacher-entry>div>a>span.teacher-phone,
-article.teacher-entry>div>a>span.teacher-email,
-#genesis-content>article>header>article>div>a:nth-child(3)>span {
-    text-decoration: none;
-    text-transform: lowercase;
-}
-
-article.teacher-entry>div>a>span.teacher-email {
-    margin-bottom: 20px;
-}
-
-article.teacher-entry .teacher-wrap>span>img {
-    border-radius: 50%;
-    display: block;
-    height: auto;
-    margin-left: 5px;
-    width: 100%;
-}
-
-.teacher-wrap>h2.teacher-title {
-    margin-bottom: 0;
-}
-
-#genesis-content>div.teacher-entries>article:nth-child(1)>div>h2,
-.teacher-wrap .teacher-name {
-    color: #abadb0;
-    display: block;
-    margin-top: 20px;
-}
-
-.teacher-contact-wrap {
-    display: block !important;
-    margin-bottom: 20px;
-}
-
-.entry-member img.teacher-image {
-    background-color: #f9f9f9;
-    border: 1px solid #ECECED;
-    padding: 5px;
-}
-
 
 /*  Events
 --------------------------------------------- */
@@ -1998,20 +1394,14 @@ article.teacher-entry .teacher-wrap>span>img {
 div.text-button {
     display: inline-block;
     overflow: hidden;
-    /* rounded corners, set to 0 for square corners */
     border-radius: 10px;
-    /* control whitespace around each button */
     margin: 5px 10px;
-    /* control shadow around button */
-    /* box-shadow: 4px 4px 4px #d3d3d3; */
 }
 
 div.text-button:hover {
     box-shadow: 3px 3px 3px #d3d3d3;
     -webkit-transition-property: box-shadow;
-    /* Safari */
     -webkit-transition-duration: .3s;
-    /* Safari */
     transition-property: box-shadow;
     transition-duration: .3s;
 }
@@ -2020,30 +1410,23 @@ a.text-container {
     text-decoration: none;
     display: inline-block;
     text-align: center;
-    /* match radius of text-button div */
     border-radius: 10px;
-    /* change the size of the button */
     padding: 20px 50px;
-    /* change button background color */
     background-color: #84BFA9;
-    /* change button text appearance */
     color: #fff;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 2em;
-    /* change border appearance */
     border: 5px solid #999;
 }
 
 a.text-container:hover {
-    /* change button text color on hover */
     color: #f8f8f8;
     font-weight: bold;
 }
 
 a.text-container .details {
     display: block;
-    /* change detail text appearance */
     font-size: .5em;
     text-transform: none;
     font-weight: normal;
@@ -2056,9 +1439,7 @@ div.icon-button {
     display: inline-block;
     overflow: hidden;
     border-radius: 50%;
-    /* control whitespace around each button */
     margin: 5px 10px;
-    /* control shadow around button */
     box-shadow: 4px 4px 4px #e3e3e3;
 }
 
@@ -2079,16 +1460,13 @@ a.icon-container {
     -webkit-align-items: center;
     display: flex;
     align-items: center;
-    /* adjust button size */
     width: 50px;
     height: 50px;
-    /* adjust button color */
     background-color: #fff;
 }
 
 .icon-container i {
     margin: 0 auto;
-    /* adjust icon size and color */
     font-size: 30px;
     color: #999;
 }
@@ -2148,12 +1526,6 @@ i.move-right {
     }
 }
 
-@media only screen and (max-width: 1300px) {
-    .genesis-nav-menu {
-        text-align: center;
-    }
-}
-
 @media only screen and (max-width: 1200px) {
     .site-inner,
     .wrap {
@@ -2185,8 +1557,8 @@ i.move-right {
 
 @media only screen and (max-width: 1023px) {
     .site-inner,
-    .wrap,
-    #mobile-genesis-nav-primary {
+    .wrap {
+    // #mobile-genesis-nav-primary {
         max-width: 800px;
     }
     .content,
@@ -2195,8 +1567,6 @@ i.move-right {
     .footer-widgets-1,
     .footer-widgets-2,
     .footer-widgets-3,
-    .genesis-responsive-menu .genesis-nav-menu .sub-menu,
-    .genesis-responsive-menu .genesis-nav-menu .sub-menu a,
     .sidebar-content-sidebar .content,
     .sidebar-content-sidebar .content-sidebar-wrap,
     .sidebar-primary,
@@ -2211,14 +1581,7 @@ i.move-right {
         padding-left: 5%;
         padding-right: 5%;
     }
-    .genesis-nav-menu li,
-    .site-header ul.genesis-nav-menu {
-        float: none;
-    }
-    .genesis-nav-menu .genesis-nav-menu li,
-    .site-header ul .genesis-nav-menu {
-        float: none;
-    }
+
     .site-header .search-form {
         float: none;
     }
@@ -2230,119 +1593,6 @@ i.move-right {
     }
     .site-header .search-form {
         margin: 16px auto;
-    }
-    /* ### Genesis Responsive Menus */
-    .genesis-responsive-menu .wrap {
-        padding: 0;
-    }
-    .genesis-responsive-menu,
-    #genesis-nav-primary {
-        display: none;
-        position: relative;
-    }
-    .genesis-skip-link .skip-link-hidden {
-        display: none;
-        visibility: hidden;
-    }
-    .menu-toggle,
-    .sub-menu-toggle {
-        background-color: #fff;
-        border-width: 0;
-        color: #333;
-        display: block;
-        margin: 0 auto;
-        overflow: hidden;
-        text-align: center;
-        visibility: visible;
-    }
-    .menu-toggle:focus,
-    .menu-toggle:hover,
-    .sub-menu-toggle:focus,
-    .sub-menu-toggle:hover {
-        background-color: #fff;
-        border-width: 0;
-        color: #c3251d;
-    }
-    .menu-toggle {
-        line-height: 22px;
-        position: relative;
-        width: 100%;
-        z-index: 1000;
-    }
-    .menu-toggle,
-    .menu-toggle:focus,
-    .menu-toggle:hover {
-        border-top: 1px solid #eee;
-    }
-    .menu-toggle::before {
-        font-size: 1.5em;
-        margin-right: 10px;
-        text-rendering: auto;
-    }
-    .sub-menu-toggle {
-        float: right;
-        padding: 13px 10px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 100;
-    }
-    .sub-menu .sub-menu-toggle {
-        padding: 12px 10px;
-    }
-    .sub-menu-toggle::before {
-        display: inline-block;
-        text-rendering: auto;
-        -webkit-transform: rotate( 0);
-        -ms-transform: rotate( 0);
-        transform: rotate( 0);
-        -webkit-transition: transform .25s ease-in-out;
-        -ms-transition: transform .25s ease-in-out;
-        transition: transform .25s ease-in-out;
-    }
-    .sub-menu-toggle.activated::before {
-        -webkit-transform: rotate( 180deg);
-        -ms-transform: rotate( 180deg);
-        transform: rotate( 180deg);
-    }
-    .genesis-responsive-menu .genesis-nav-menu .menu-item {
-        display: block;
-        float: none;
-        position: relative;
-        text-align: left;
-    }
-    .genesis-responsive-menu .genesis-nav-menu .menu-item:focus,
-    .genesis-responsive-menu .genesis-nav-menu .menu-item:hover {
-        position: relative;
-    }
-    .genesis-responsive-menu .genesis-nav-menu .menu-item a {
-        border: none;
-        margin-bottom: 1px;
-        padding: 15px 20px;
-        width: 100%;
-    }
-    .genesis-responsive-menu .genesis-nav-menu .sub-menu {
-        border: none;
-    }
-    .genesis-responsive-menu .genesis-nav-menu .menu-item>a:focus ul.sub-menu,
-    .genesis-responsive-menu .genesis-nav-menu .menu-item>a:focus ul.sub-menu .sub-menu {
-        left: 0;
-        margin-left: 0;
-    }
-    .genesis-responsive-menu .genesis-nav-menu>.menu-item-has-children>a::after {
-        content: none;
-    }
-    .genesis-responsive-menu .genesis-nav-menu .sub-menu {
-        clear: both;
-        display: none;
-        margin: 0;
-        opacity: 1;
-        padding-left: 15px;
-        position: static;
-        width: 100%;
-    }
-    .genesis-responsive-menu .genesis-nav-menu .sub-menu .sub-menu {
-        margin: 0;
     }
     .footer-widgets-1,
     .footer-widgets-2 {
@@ -2399,7 +1649,16 @@ i.move-right {
     }
 }
 
+@media only screen and (max-width: 800px) {
 
+    div.site-container>header>div>div.title-area>p.site-title>a,
+    div.site-container>header>div>div.title-area>h1>a {
+        margin: 20px auto 0;
+    }
+    .header-image .site-title > a {
+        min-height: 0;
+    }
+}
 /* # Print Styles
 ---------------------------------------------------------------------------------------------------- */
 

@@ -1,0 +1,41 @@
+/**
+ * https://sridharkatakam.com/genesis-responsivemenus-in-minimum-pro/
+ * https://github.com/studiopress/responsive-menus
+ **/
+
+
+/* ## Accessible/Responsive Menu
+--------------------------------------------- */
+
+// .menu .menu-item:focus {
+//     position: static;
+// }
+
+// .menu .menu-item>a:focus+ul.sub-menu,
+// .menu .menu-item.sfHover>ul.sub-menu {
+//     left: auto;
+//     opacity: 1;
+// }
+
+// .menu-toggle,
+// .sub-menu-toggle {
+//     display: none;
+//     visibility: hidden;
+// }
+
+@media only screen and (max-width: 1023px) {
+
+    .js .site-header nav .wrap,
+    .genesis-responsive-menu .wrap {
+        padding: 0;
+    }
+    
+
+
+	.genesis-responsive-menu .site-header .genesis-nav-menu .menu-item a {
+		padding: 10px 0;
+    }
+    
+ 
+
+}

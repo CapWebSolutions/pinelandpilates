@@ -1,32 +1,34 @@
 /*
-	Theme Name: Pineland Pilates 
-	Theme URI: http://www.studiopress.com/
-	Description: This is the custom child theme created for Pineland Pilates running on the Genesis Framework.
+	Theme Name: Pineland Pilates Child
+	Theme URI: https://github.com/capwebsolutions/pinelandpilates
+	Description: Custom Genesis child theme created for Pineland Pilates.
 	Author: Cap Web Solutions
 	Author URI: https://capwebsolutions.com/
-
-	Version: 1.1.0
-
+	Version: 1.2.0
+    Template: genesis
+	Template Version: 2.6.1
 	License: GPL-2.0+
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
 	Text Domain: pineland
 */
 
 @import "partials/astartingplace";
 @import "partials/sk-mega-menu";
-// @import "partials/variables";
+// @import "partials/responsive-menu";
+@import "partials/variables";
 // @import "partials/resets";
 // @import "partials/defaults";
 // @import "partials/structure";
-// @import "partials/common-classes";
-// @import "partials/widgets";
-// @import "partials/plugins";
-// @import "partials/header";
-// @import "partials/menu";
+@import "partials/common-classes";
+@import "partials/widgets";
+@import "partials/plugins";
+@import "partials/header";
+@import "partials/menu"; 
 // @import "partials/content-area";
 // @import "partials/sidebar";
 // @import "partials/footer-area";
 // @import "partials/custom";
 // @import "partials/home";
 // @import "partials/print";
+@import "partials/teachers";
+@import "partials/testimonials";
