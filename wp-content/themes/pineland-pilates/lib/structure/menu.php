@@ -10,41 +10,8 @@
  */
 namespace CapWeb\Pineland;
 
-/**
- * Unregister menu callbacks.
- *
- * @since 1.0.0
- *
- * @return void
- */
-function unregister_menu_callbacks() {
-	// remove_action( 'genesis_after_header', 'genesis_do_nav' );
-	remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-}
-
 // Reposition the secondary navigation menu
 add_action( 'genesis_footer', 'genesis_do_subnav', 5 );
-
-/**
- * Reduce the secondary navigation menu to one level depth.
- *
- * @since 1.0.0
- *
- * @param array $args
- *
- * @return array
- */
-function setup_secondary_menu_args( array $args ) {
-
-	if ( 'secondary' != $args['theme_location'] ) {
-		return $args;
-	}
-
-	$args['depth'] = 1;
-
-	return $args;
-}
-add_filter( 'wp_nav_menu_args', __NAMESPACE__ . '\setup_secondary_menu_args' );
 
 /**
  * Setup Tertiary menu.
@@ -85,8 +52,7 @@ function nav_description( $item_output, $item, $depth, $args ) {
 // Stop WP removing HTML in Menu Description area
 remove_filter('nav_menu_description', 'strip_tags');
  
-// add_filter( 'wp_setup_nav_menu_item', __NAMESPACE__ . '\cws_wp_setup_nav_menu_item' );
- 
+add_filter( 'wp_setup_nav_menu_item', __NAMESPACE__ . '\cws_wp_setup_nav_menu_item' );
 function cws_wp_setup_nav_menu_item($menu_item) {
 	$menu_item->description = apply_filters( 
 		'nav_menu_description', 
@@ -95,16 +61,7 @@ function cws_wp_setup_nav_menu_item($menu_item) {
 	return $menu_item;
 }
 
-
-// Repositions primary navigation menu.
-remove_action( 'genesis_after_header', 'genesis_do_nav' );
-// add_action( 'genesis_header', 'genesis_do_nav', 12 );
-
-// Repositions the secondary navigation menu.
-remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-// add_action( 'genesis_footer', 'genesis_do_subnav', 10 );
-
-// add_filter( 'wp_nav_menu_args', __NAMESPACE__ . '\secondary_menu_args' );
+add_filter( 'wp_nav_menu_args', __NAMESPACE__ . '\secondary_menu_args' );
 /**
  * Reduces secondary navigation menu to one level depth.
  *
