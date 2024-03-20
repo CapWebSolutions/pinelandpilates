@@ -3,7 +3,7 @@
  * Plugin Name: Pineland Pilates Core Functionality
  * Plugin URI: https://github.com/CapWebSolutions/starter-core-functionality
  * Description: This contains all this site's core functionality so that it is theme independent. 
- * Version: 2.1.0
+ * Version: 2.0.0
  * Author: Cap Web Solutions
  * Author URI: https://capwebsolutions.com
  *
@@ -17,8 +17,33 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-// Plugin Directory. Set constant so we know where we are installed
-define( 'CWS_DIR', dirname( __FILE__ ) );
+// Define needed constants
+define( 'CORE_FUNCTIONALITY_PLUGIN_DIR', plugin_dir_path( __FILE__ ) ); //location of plugin folder on disk
+define( 'CORE_FUNCTIONALITY_PLUGIN_URI', plugin_dir_url( __FILE__ ) );  //location of plugin folder in wp-content
+define( 'CORE_FUNCTIONALITY_THEME_DIR', get_stylesheet_directory() );   // Used in checking location of logo file
+define( 'CORE_FUNCTIONALITY_THEME_URI', get_stylesheet_directory_uri() );   // Used in checking location of logo file
+define( 'CORE_FUNCTIONALITY_PLUGIN_VERSION',get_plugin_data(__FILE__ )['Version'] ); 
 
-// General. This should always be used. 
-include_once( CWS_DIR . '/lib/functions/general.php' );
+/**
+ * Get all the include files for the theme.
+ *
+ * @author CapWebSolutions
+ */
+function include_core_functionality_inc_files() {
+	$files = [
+		'lib/functions/',
+		'lib/metabox-io-example.php', // TGMPA library and related for Metabox.io
+	];
+	foreach ( $files as $include ) {
+		$include = trailingslashit( CORE_FUNCTIONALITY_PLUGIN_DIR ) . $include;
+		// Allows inclusion of individual files or all .php files in a directory.
+		if ( is_dir( $include ) ) {
+			foreach ( glob( $include . '*.php' ) as $file ) {
+				require $file;  // all php files from folder
+			}
+		} else {
+			require $include;    // single php file
+		}
+	}
+}
+include_core_functionality_inc_files();
