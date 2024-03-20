@@ -102,7 +102,5 @@ Thumbs.db
 # track these mu-plugins, plugins, and themes
 # add your own entries here
 !themes/pineland-pilates/
-!mu-plugins/pinelandpilates-core-functionality/
-!mu-plugins/load.php
 !plugins/pineland-teachers/
 !plugins/pineland-testimonials/
